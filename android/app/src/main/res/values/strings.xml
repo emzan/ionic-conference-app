@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Capacitor webinar</string>
-    <string name="title_activity_main">Capacitor webinar</string>
+    <string name="app_name">Cap webinar demo</string>
+    <string name="title_activity_main">Cap webinar demo</string>
     <string name="package_name">com.netkow.webinar.cap</string>
     <string name="fileprovider_authority">com.netkow.webinar.cap.fileprovider</string>
     <string name="custom_url_scheme">com.netkow.webinar.cap</string>

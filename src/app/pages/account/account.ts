@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 import { UserData } from '../../providers/user-data';
-
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'page-account',
@@ -14,19 +15,34 @@ import { UserData } from '../../providers/user-data';
 })
 export class AccountPage implements AfterViewInit {
   username: string;
+  userProfilePic: SafeResourceUrl;
 
   constructor(
     public alertCtrl: AlertController,
     public router: Router,
-    public userData: UserData
+    public userData: UserData,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngAfterViewInit() {
     this.getUsername();
   }
 
-  updatePicture() {
-    console.log('Clicked to update picture');
+  async updatePicture() {
+    const { Camera } = Plugins;
+
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.Base64,
+      source: CameraSource.Camera
+    });
+
+    // Example of using the Base64 return type. It's recommended to use CameraResultType.Uri
+    // instead for performance reasons when showing large, or a large amount of images.
+    this.userProfilePic = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.base64Data));
+
+    console.log('User profile pic has been updated!');
   }
 
   // Present an alert with the current username populated

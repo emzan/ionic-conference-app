@@ -1,6 +1,6 @@
 {
   "appId": "com.netkow.webinar.cap",
-  "appName": "Capacitor webinar",
+  "appName": "Cap webinar demo",
   "bundledWebRuntime": false,
   "webDir": "www"
 }
