@@ -1,6 +1,10 @@
-# Ionic Conference Application
+# Ionic Conference Application: Capacitor Webinar Edition
 
-This is purely a demo of Ionic with TypeScript. It is still in development.
+This is a fork of the Ionic Conference app, used during Ionic's Capacitor webinar on November 15th, 2018. Please note that this codebase is for reference purposes only. It will not be supported by Ionic and will not be kept up to date! Both Ionic v4 and Capacitor are currently in beta, meaning things can and will change.
+
+At time of webinar, versions were: Ionic framework v4.0.0-beta.15 and Capacitor v1.0.0-beta.8.
+
+Original Ionic Conference app documentation is below:
 
 
 ## Important!

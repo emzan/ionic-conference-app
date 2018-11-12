@@ -32,38 +32,48 @@ export class LoginPage {
 
       /*  As of November 2018, Web/PWA support for local notifications isn't implemented yet
           in Capacitor. If not available, use a Toast message instead.
+
+          Also, Capacitor.isPluginAvailable('LocalNotifications') is not working on Android/iOS at time of webinar.
+          Using try/catch for now.
       */
-      if (Capacitor.isPluginAvailable('LocalNotifications')) {
-        this.showLocalNotification();
-      } else {
+     try {
+        if (Capacitor.isPluginAvailable('LocalNotifications')) {
+          this.showLocalNotification();
+        } else {
+          this.showToast();
+        }
+      } catch (error) {
         this.showToast();
       }
     }
   }
 
   configureLocalNotifications() {
-    if (Capacitor.isPluginAvailable('LocalNotifications')) {
-      Plugins.LocalNotifications.registerActionTypes({
-        types: [
-          {
-            id: 'OPEN_ACCOUNT_PAGE',
-            actions: [
-              {
-                id: 'view',
-                title: 'Take Picture'
-              }
-            ]
-          }
-        ]
-      });
+    // Temporarily using try...catch block
+    try {
+      if (Capacitor.isPluginAvailable('LocalNotifications')) {
+        Plugins.LocalNotifications.registerActionTypes({
+          types: [
+            {
+              id: 'OPEN_ACCOUNT_PAGE',
+              actions: [
+                {
+                  id: 'view',
+                  title: 'Take Picture'
+                }
+              ]
+            }
+          ]
+        });
 
-      Plugins.LocalNotifications.addListener('localNotificationActionPerformed', (notification) => {
-        console.log('Notification action performed', notification);
+        Plugins.LocalNotifications.addListener('localNotificationActionPerformed', (notification) => {
+          console.log('Notification action performed', notification);
 
-        // Open Account page so user can take selfie
-        this.router.navigateByUrl('/account');
-      });
-    }
+          // Open Account page so user can take selfie
+          this.router.navigateByUrl('/account');
+        });
+      }
+    } catch (error) {}
   }
 
   async showToast() {
