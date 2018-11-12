@@ -2,7 +2,10 @@
 
 This is a fork of the Ionic Conference app, used during Ionic's Capacitor webinar on November 15th, 2018. Please note that this codebase is for reference purposes only. It will not be supported by Ionic and will not be kept up to date! Both Ionic v4 and Capacitor are currently in beta, meaning things can and will change.
 
+## Details
 At time of webinar, versions were: Ionic framework v4.0.0-beta.15 and Capacitor v1.0.0-beta.8.
+
+In the demo, new behavior was added to the existing Ionic Conference app. `account.ts` and `login.ts` were updated to allow the user to update their profile picture using their device of choice's native device camera. One codebase allows for Camera access on web and mobile (Android and iOS). Additionally, when the user signs in, either a local notification or a toast message is sent reminding the user to update their profile picture.
 
 Original Ionic Conference app documentation is below:
 
