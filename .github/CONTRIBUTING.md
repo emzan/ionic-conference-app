@@ -1,8 +1,8 @@
-# Contributing to the Ionic Conference Application
+# Contributing to the WahYanCollegeKowloon Application
 
-Thank you for taking the time to contribute! :tada::+1:
+Thank you!
 
-The following is a set of guidelines for contributing to the conference app. These are just guidelines, not rules, use your best judgment and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to the WYK app. These are just guidelines, not rules, use your best judgment and feel free to propose changes to this document in a pull request.
 
 ## Table of Contents
  - [How To Contribute](#how-to-contribute)
