@@ -328,18 +328,18 @@
 
 
   "map": [{
-    "name": "Monona Terrace Convention Center",
-    "lat": 43.071584,
-    "lng": -89.380120,
+    "name": "Budapest Convention Center",
+    "lat": 47.4925,
+    "lng": 19.0513,
     "center": true
   }, {
-    "name": "Ionic HQ",
-    "lat": 43.074395,
-    "lng": -89.381056
+    "name": "Geronimo HQ",
+    "lat": 47.4925,
+    "lng": 19.0513
   }, {
-    "name": "Afterparty - Brocach Irish Pub",
-    "lat": 43.07336,
-    "lng": -89.38335
+    "name": "Afterparty - Russian vodka bar",
+    "lat": 47.4925,
+    "lng": 19.0513
   }]
 
 }
